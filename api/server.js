@@ -20,4 +20,9 @@ server.get("/hobbits", (req, res) => {
     });
 });
 
+server.post("/hobbits", (req, res)=>{
+  Hobbits.insert(req.body)
+    .then(hobbit => res.status(200).json(hobbit))
+})
+
 module.exports = server;
